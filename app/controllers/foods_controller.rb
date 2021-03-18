@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   def index
+    @foods = Food.order(id: :asc)
   end
 
   def show
