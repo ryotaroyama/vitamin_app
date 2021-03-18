@@ -14,7 +14,7 @@ class FoodsController < ApplicationController
 
   def create
     food = Food.create!(food_params)
-    redirect_to root_path
+    redirect_to food, notice: "投稿しました"
   end
 
   def edit
@@ -22,12 +22,12 @@ class FoodsController < ApplicationController
 
   def update
     @food.update!(food_params)
-    redirect_to food
+    redirect_to @food, notice: "更新しました"
   end
 
   def destroy
     @food.destroy!
-    redirect_to root_path
+    redirect_to root_path, alert: "削除しました"
   end
 
   private
