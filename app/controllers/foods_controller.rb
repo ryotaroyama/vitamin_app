@@ -6,9 +6,12 @@ class FoodsController < ApplicationController
   end
 
   def new
+    @food = Food.new
   end
 
   def create
+    food = Food.create!(food_params)
+    redirect_to food
   end
 
   def edit
@@ -18,5 +21,11 @@ class FoodsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def food_params
+    params.require(:food).permit(:name, :comment)
   end
 end
