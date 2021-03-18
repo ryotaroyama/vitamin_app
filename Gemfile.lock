@@ -47,6 +47,8 @@ GEM
     activerecord (6.1.3)
       activemodel (= 6.1.3)
       activesupport (= 6.1.3)
+    activerecord-import (1.0.8)
+      activerecord (>= 3.2)
     activestorage (6.1.3)
       actionpack (= 6.1.3)
       activejob (= 6.1.3)
@@ -71,6 +73,10 @@ GEM
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -163,6 +169,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (0.1.1)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -182,8 +189,11 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  activerecord-import
   bootsnap (>= 1.4.4)
   byebug
+  hirb
+  hirb-unicode
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
