@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      vitamin: ビタミン
+      food: 食品
+      relationship: 関連
+    attributes:
+      vitamin:
+        name: 種類
+        effect: 効果
+      food:
+        name: 食品
+        comment: コメント
+      relationship:
+        vitamin: ビタミン
+        food: 食品
