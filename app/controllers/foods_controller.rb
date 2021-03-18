@@ -13,16 +13,25 @@ class FoodsController < ApplicationController
   end
 
   def create
-    food = Food.create!(food_params)
-    redirect_to food, notice: "投稿しました"
+    @food = Food.new(food_params)
+    if @food.save
+      redirect_to @food, notice: "投稿しました"
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @food.update!(food_params)
-    redirect_to @food, notice: "更新しました"
+    if @food.update(food_params)
+      redirect_to @food, notice: "更新しました"
+    else
+      flash.now[:alert] = "更新に失敗しました"
+      render :edit
+    end
   end
 
   def destroy
